@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family & Friends – Nur Syawallina</title>
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Rajdhani:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Rajdhani', sans-serif;
+    background:#0b0b0b;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ================= HEADER ================= */
+header{
+    text-align:center;
+    padding:90px 20px;
+    background:
+    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
+    url("ron.jpg") center/cover no-repeat;
+    border-bottom:3px solid gold;
+}
+header h1{
+    font-family:'Playfair Display', serif;
+    font-size:52px;
+    color:gold;
+    text-shadow:0 0 25px black;
+}
+
+/* ================= SECTION ================= */
+section{
+    width:90%;
+    margin:60px auto;
+    padding:40px;
+    border-radius:18px;
+    border:3px solid gold;
+    box-shadow:0 0 40px rgba(255,215,0,0.25);
+}
+
+h2{
+    text-align:center;
+    font-size:38px;
+    font-family:'Playfair Display', serif;
+    color:gold;
+    margin-bottom:40px;
+}
+
+/* ================= FAMILY FILM STRIP ================= */
+.film-wrapper{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.film-strip{
+    display:flex;
+    gap:30px;
+    overflow-x:auto;
+    padding:30px 50px;
+    width:85%;
+    background:repeating-linear-gradient(
+        to right,
+        #000 0px,
+        #000 30px,
+        #222 30px,
+        #222 60px
+    );
+    border-radius:16px;
+    border:3px solid gold;
+}
+.film-strip::-webkit-scrollbar{ display:none; }
+
+.film-strip img{
+    width:240px;
+    height:340px;
+    object-fit:cover;
+    border-radius:14px;
+    border:4px solid gold;
+    box-shadow:0 0 30px rgba(255,215,0,0.6);
+    transition:0.4s;
+}
+.film-strip img:hover{
+    transform:scale(1.1);
+}
+
+/* scroll buttons */
+.scroll-btn{
+    position:absolute;
+    background:black;
+    color:gold;
+    border:2px solid gold;
+    font-size:28px;
+    padding:10px 16px;
+    cursor:pointer;
+    border-radius:50%;
+}
+.scroll-left{ left:0; }
+.scroll-right{ right:0; }
+
+/* ================= FRIENDS SCRAPBOOK ================= */
+.scrapbook{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:50px;
+}
+
+.scrap-card{
+    position:relative;
+    width:220px;
+    background:#fdf8ef;
+    padding:15px 15px 35px;
+    border-radius:8px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.7);
+    transition:0.4s;
+}
+
+.scrap-card:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 45px gold;
+    z-index:5;
+}
+
+.scrap-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    border-radius:6px;
+}
+
+.scrap-card::before{
+    content:"";
+    position:absolute;
+    top:-14px;
+    left:50%;
+    transform:translateX(-50%) rotate(-5deg);
+    width:80px;
+    height:25px;
+    background:rgba(255,255,255,0.7);
+    border:1px solid #ddd;
+}
+
+.scrap-card p{
+    margin-top:12px;
+    font-family:'Pacifico', cursive;
+    font-size:18px;
+    color:#333;
+    text-align:center;
+}
+
+/* ================= MUSIC BUTTON ================= */
+.music-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:black;
+    color:gold;
+    border:2px solid gold;
+    padding:12px 22px;
+    border-radius:30px;
+    cursor:pointer;
+    z-index:999;
+}
+.music-btn:hover{
+    background:gold;
+    color:black;
+}
+
+/* ================= MAGIC CURSOR ================= */
+.sparkle{
+    position:fixed;
+    width:6px;
+    height:6px;
+    background:gold;
+    border-radius:50%;
+    pointer-events:none;
+    box-shadow:0 0 12px gold;
+    animation:sparkFade 0.8s linear forwards;
+}
+@keyframes sparkFade{
+    from{opacity:1;}
+    to{opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+<div class="music-btn" onclick="toggleMusic()">🎵 Music</div>
+
+<header>
+    <h1>👨‍👩‍👧‍👦 Family & Friends 📒</h1>
+</header>
+
+<!-- FAMILY GALLERY -->
+<section>
+<h2>📸 My Family Album</h2>
+
+<div class="film-wrapper">
+<button class="scroll-btn scroll-left" onclick="scrollLeft()">❮</button>
+
+<div class="film-strip" id="filmStrip">
+<img src="sib.jpg">
+<img src="daddy.jpg">
+<img src="family.jpg">
+<img src="babycat.jpg">
+<img src="sibling.jpg">
+</div>
+
+<button class="scroll-btn scroll-right" onclick="scrollRight()">❯</button>
+</div>
+</section>
+
+<!-- ME & MY FRIENDS SCRAPBOOK -->
+<section>
+<h2>🧑‍🤝‍🧑 Me and My Friends Scrapbook</h2>
+
+<div class="scrapbook">
+
+<div class="scrap-card">
+<img src="friends.jpg">
+<p>highlights ✨</p>
+</div>
+
+<div class="scrap-card">
+<img src="girls.jpg">
+<p>highlights 🤍</p>
+</div>
+
+<div class="scrap-card">
+<img src="trio.jpg">
+<p>highlights 🌸</p>
+</div>
+
+<div class="scrap-card">
+<img src="tirah.jpg">
+<p>highlights 💫</p>
+</div>
+
+<div class="scrap-card">
+<img src="her.jpg">
+<p>Me  🌸</p>
+</div>
+
+<div class="scrap-card">
+<img src="her2.jpg">
+<p>Me 🌸</p>
+</div>
+
+<div class="scrap-card">
+<img src="her3.jpg">
+<p>Me 🌸</p>
+</div>
+
+<div class="scrap-card">
+<img src="wawalina.jpg">
+<p>Me 🌸</p>
+</div>
+
+<!-- ===== ME ADDED (ONLY THIS IS NEW) ===== -->
+<div class="scrap-card">
+<img src="her4.jpg">
+<p>Me 💛</p>
+</div>
+
+</div>
+</section>
+
+<!-- BACK -->
+<div style="text-align:center;margin-bottom:40px;">
+<a href="index.html">
+<button style="padding:12px 24px;border:none;border-radius:10px;background:gold;cursor:pointer;">
+⬅ Back to Home
+</button>
+</a>
+</div>
+
+<script>
+/* MUSIC */
+const music=document.getElementById("bgMusic");
+function toggleMusic(){
+    music.paused ? music.play() : music.pause();
+}
+
+/* SCROLL */
+const strip=document.getElementById("filmStrip");
+function scrollLeft(){ strip.scrollBy({left:-320,behavior:"smooth"}); }
+function scrollRight(){ strip.scrollBy({left:320,behavior:"smooth"}); }
+
+/* MAGIC CURSOR */
+window.addEventListener("mousemove", e=>{
+    const s=document.createElement("div");
+    s.className="sparkle";
+    s.style.left=e.clientX+"px";
+    s.style.top=e.clientY+"px";
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),800);
+});
+</script>
+
+</body>
+</html>
+

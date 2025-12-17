@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Skills – Nur Syawallina</title>
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Rajdhani', sans-serif;
+    color:white;
+
+    background:
+    linear-gradient(rgba(207, 181, 181, 0.75), rgba(0,0,0,0.85)),
+    url("wig.jpg") center/cover fixed no-repeat;
+}
+
+/* ================= HEADER ================= */
+header{
+    text-align:center;
+    padding:90px 20px;
+    background:
+    linear-gradient(rgba(155, 139, 139, 0.7),rgba(0,0,0,0.8)),
+    url("skills-bg.jpg") center/cover no-repeat;
+    border-bottom:3px solid gold;
+}
+
+header h1{
+    font-family:'Playfair Display', serif;
+    font-size:52px;
+    color:gold;
+    text-shadow:0 0 25px black;
+    animation:glowPulse 3s ease-in-out infinite;
+}
+
+/* ================= SECTION GENERAL ================= */
+section{
+    width:90%;
+    margin:60px auto;
+    padding:40px;
+    border-radius:18px;
+    border:3px solid gold;
+    box-shadow:0 0 40px rgba(255,215,0,0.25);
+    background:rgba(0,0,0,0.75);
+}
+
+/* ================= TITLE ================= */
+h2{
+    text-align:center;
+    font-size:38px;
+    font-family:'Playfair Display', serif;
+    color:gold;
+    margin-bottom:40px;
+}
+
+/* ================= SKILLS LIST ================= */
+.skill-item{
+    background:rgba(255, 229, 83, 0.76);
+    padding:20px;
+    margin:18px auto;
+    width:70%;
+    border-radius:12px;
+    text-align:center;
+    font-size:22px;
+    box-shadow:0 0 20px rgba(175, 155, 1, 0.959);
+    transition:0.5s;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Floating hover + glow */
+.skill-item:hover{
+    transform:scale(1.08) translateY(-8px);
+    box-shadow:0 0 50px gold, 0 0 100px rgba(255, 223, 0, 0.3);
+}
+
+/* Sparkle hover effect */
+.skill-item:hover::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background: radial-gradient(circle, gold 2px, transparent 2px);
+    background-size: 15px 15px;
+    animation: sparkleAround 1s infinite;
+    pointer-events: none;
+    border-radius: 12px;
+}
+
+/* ===== SKILL PROGRESS BAR ===== */
+.skill-bar{
+    width:80%;
+    height:22px;
+    background:rgba(255,255,255,0.2);
+    margin:10px auto 0 auto;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.skill-fill{
+    height:100%;
+    background: linear-gradient(270deg, gold, #ffd700, #ffff00);
+    background-size: 600% 600%;
+    text-align:right;
+    padding-right:8px;
+    line-height:22px;
+    font-weight:bold;
+    border-radius:12px;
+    color:black;
+    width:0%;
+    transition: width 2s ease-in-out;
+    box-shadow:0 0 15px gold;
+    position:relative;
+}
+
+/* Shine effect */
+.skill-fill::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-50%;
+    width:50%;
+    height:100%;
+    background:linear-gradient(120deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
+    transform:skewX(-25deg);
+}
+.skill-fill.animate::after{
+    animation:shine 2s linear infinite;
+}
+
+/* ================= BACK BUTTON ================= */
+.back-button{
+    display:block;
+    background-color:#dbd334;
+    color:white;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin:30px auto 0 auto;
+    text-align:center;
+    text-decoration:none;
+    transition: all 0.3s ease;
+}
+.back-button:hover{
+    background-color:#2980b9;
+}
+
+/* ================= MUSIC BUTTON ================= */
+.music-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:rgba(0,0,0,0.8);
+    border:2px solid gold;
+    color:gold;
+    padding:10px 18px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:bold;
+    box-shadow:0 0 15px gold;
+    z-index:999;
+}
+.music-btn:hover{
+    background:gold;
+    color:black;
+}
+
+/* ================= EXTRA EFFECTS ================= */
+
+/* Header glow animation */
+@keyframes glowPulse{
+    0%{text-shadow:0 0 10px gold;}
+    50%{text-shadow:0 0 30px gold;}
+    100%{text-shadow:0 0 10px gold;}
+}
+
+/* Cursor sparkle */
+.sparkle{
+    position:fixed;
+    width:6px;
+    height:6px;
+    background:gold;
+    border-radius:50%;
+    pointer-events:none;
+    box-shadow:0 0 12px gold;
+    animation:sparkFade 0.8s linear forwards;
+    z-index:9999;
+}
+@keyframes sparkFade{
+    from{transform:scale(1); opacity:1;}
+    to{transform:scale(0); opacity:0;}
+}
+
+/* Hover sparkle animation */
+@keyframes sparkleAround {
+    0%{background-position:0 0;}
+    100%{background-position:15px 15px;}
+}
+
+/* Gradient animation for skill bars */
+@keyframes shine{
+    0%{left:-50%;}
+    100%{left:100%;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== BACKGROUND MUSIC ===== -->
+<audio id="bgMusic" loop>
+    <source src="khalid.mp3" type="audio/mpeg">
+</audio>
+<div class="music-btn" onclick="toggleMusic()">🎵 Music</div>
+
+<header>
+    <h1>💻 My Skills 💻</h1>
+</header>
+
+<section>
+    <h2>🛠 Skills</h2>
+
+    <div class="skill-item">
+        Html
+        <div class="skill-bar">
+            <div class="skill-fill" data-percentage="50%">50%</div>
+        </div>
+    </div> 
+
+    <div class="skill-item">
+        JavaScript
+        <div class="skill-bar">
+            <div class="skill-fill" data-percentage="45%">45%</div>
+        </div>
+    </div>
+
+    <div class="skill-item">
+        Graphic Design
+        <div class="skill-bar">
+            <div class="skill-fill" data-percentage="70%">70%</div>
+        </div>
+    </div>
+
+    <div class="skill-item">
+        Communication
+        <div class="skill-bar">
+            <div class="skill-fill" data-percentage="80%">80%</div>
+        </div>
+    </div>
+
+    <div class="skill-item">
+        Problem Solving
+        <div class="skill-bar">
+            <div class="skill-fill" data-percentage="70%">70%</div>
+        </div>
+    </div>
+
+    <!-- New Skills -->
+    <div class="skill-item">
+        English
+        <div class="skill-bar">
+            <div class="skill-fill" data-percentage="80%">80%</div>
+        </div>
+    </div>
+
+    <div class="skill-item">
+        Microsoft Office
+        <div class="skill-bar">
+            <div class="skill-fill" data-percentage="80%">80%</div>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-button">Back to Home</a>
+</section>
+
+<script>
+// Animate skill bars sequentially with sparkle emoji
+window.addEventListener('load', () => {
+    const fills = document.querySelectorAll('.skill-fill');
+    fills.forEach((fill, index) => {
+        const percent = fill.getAttribute('data-percentage');
+        setTimeout(() => {
+            fill.style.width = percent;
+            fill.classList.add('animate');
+
+            // Add sparkle emoji pop
+            const emoji = document.createElement('span');
+            emoji.textContent = "✨";
+            emoji.style.position = "absolute";
+            emoji.style.right = "10px";
+            emoji.style.top = "-25px";
+            emoji.style.fontSize = "20px";
+            fill.appendChild(emoji);
+            setTimeout(()=>emoji.remove(),2000);
+
+        }, index * 500); // setiap skill delay 0.5s
+    });
+});
+
+// Background music (play after first click)
+const music = document.getElementById('bgMusic');
+let musicStarted = false;
+
+window.addEventListener('click', () => {
+    if(!musicStarted){
+        music.play();
+        musicStarted = true;
+    }
+}, { once:true });
+
+function toggleMusic(){
+    if(music.paused){
+        music.play();
+    }else{
+        music.pause();
+    }
+}
+
+/* Cursor sparkle effect */
+window.addEventListener('mousemove', e => {
+    const spark = document.createElement('div');
+    spark.className = 'sparkle';
+    spark.style.left = e.clientX + 'px';
+    spark.style.top = e.clientY + 'px';
+    document.body.appendChild(spark);
+    setTimeout(()=>spark.remove(),800);
+});
+</script>
+
+</body>
+</html>
+

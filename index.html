@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Resume – Nur Syawallina</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:"Cormorant Garamond", serif;
+    background:url('background.jpg') no-repeat center fixed;
+    background-size:cover;
+    color:#f2e9a9;
+}
+
+/* ===== SIDE NAV ===== */
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:220px;
+    height:100vh;
+    background:rgba(0,0,0,0.9);
+    border-right:3px solid gold;
+    padding-top:40px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+nav h2{
+    color:gold;
+    font-family:"Playfair Display", serif;
+    margin-bottom:30px;
+}
+
+nav a{
+    color:gold;
+    text-decoration:none;
+    margin:15px 0;
+    font-size:18px;
+}
+
+nav a:hover{
+    text-shadow:0 0 10px gold;
+}
+
+.social{
+    margin-top:auto;
+    padding-bottom:30px;
+}
+
+.social img{
+    margin:10px;
+    filter:drop-shadow(0 0 5px gold);
+}
+
+/* ===== MAIN CONTENT ===== */
+.main{
+    margin-left:220px;
+    padding-top:40px;
+}
+
+/* ===== HEADER ===== */
+header{
+    text-align:center;
+    padding:70px 20px 40px;
+    background:rgba(0,0,0,0.6);
+}
+
+header h1{
+    font-family:"Playfair Display", serif;
+    font-size:46px;
+    color:gold;
+    text-shadow:0 0 15px gold;
+}
+
+.profile-photo{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    border:4px solid gold;
+    margin:0 auto 20px;
+    background:url('wawa.jpg') center/cover;
+    box-shadow:0 0 20px gold;
+}
+
+/* ===== SECTION ===== */
+section{
+    width:85%;
+    margin:60px auto;
+    padding:40px;
+    background:rgba(20,20,20,0.85);
+    border:3px solid gold;
+    border-radius:12px;
+}
+
+h2{
+    color:gold;
+    font-family:"Playfair Display", serif;
+    font-size:32px;
+}
+
+/* ===== GRID ===== */
+.playlist-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(160px,1fr));
+    gap:20px;
+    margin-top:30px;
+    justify-items:center;
+}
+
+/* ===== MOVIE CARD (SMALLER) ===== */
+.song-card{
+    width:200px;
+    background:rgba(0,0,0,0.65);
+    border:2px solid gold;
+    border-radius:15px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 0 15px rgba(255,215,0,0.3);
+    transition:all 0.4s ease;
+    cursor:pointer;
+    color:gold;
+}
+
+/* ⭐ EFFECT: glow + hover floating */
+.song-card:hover{
+    transform:translateY(-6px) scale(1.05);
+    box-shadow:0 0 30px gold, 0 0 50px rgba(255,215,0,0.5);
+}
+
+.song-card img{
+    width:200px;
+    height:auto;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:10px;
+    border:2px solid gold;
+    transition:all 0.4s ease;
+}
+
+.song-card img:hover{
+    transform:scale(1.05) rotate(-1deg);
+    box-shadow:0 0 25px gold, 0 0 45px rgba(255,215,0,0.3);
+}
+
+.song-title{
+    font-size:16px;
+    font-weight:bold;
+}
+
+/* ===== CLICK EFFECT ===== */
+.song-card.active{
+    animation:clickPulse 0.4s ease;
+    box-shadow:0 0 40px gold;
+}
+
+@keyframes clickPulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.08);}
+    100%{transform:scale(1);}
+}
+
+/* ===== VIDEO ===== */
+.video-container{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+}
+
+.video-frame{
+    width:80%;
+    max-width:700px;
+    border:3px solid gold;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 0 25px rgba(255,215,0,0.6);
+    animation:float 5s ease-in-out infinite;
+    transition:all 0.5s ease;
+}
+
+/* ⭐ EFFECT: glow on hover */
+.video-frame:hover{
+    box-shadow:0 0 50px gold, 0 0 80px rgba(255,215,0,0.4);
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+    100%{transform:translateY(0);}
+}
+
+.video-frame video{
+    width:100%;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(0,0,0,0.85);
+    color:gold;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>MENU</h2>
+    <a href="index.html">Home</a>
+    <a href="education.html">Education</a>
+    <a href="skills.html">Skills</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+
+    <h2>Social</h2>
+    <div class="social">
+        <a href="https://www.instagram.com/n.syahwahhh" target="_blank">
+            <img src="instagram.png" width="35">
+        </a>
+        <a href="https://www.tiktok.com/@n.syahwhaaaaaaaaa" target="_blank">
+            <img src="tik-tok.png" width="35">
+        </a>
+    </div>
+</nav>
+
+<div class="main">
+
+<header>
+    <div class="profile-photo"></div>
+    <h1>MY RESUME — NUR SYAWALLINA</h1>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <p>
+        Hello! I am Nur Syawallina — welcome to my elegant portfolio resume.
+        I am an enthusisastic Information Management student from Melaka borm in 6 November 2005,
+        with hands-on internship experience in document managements office adminstration office 
+        During my internship, i assited in organizing, filing, and digitizing both physical and digital records
+        to improve efficiency.I am motivated, responsible, and detail-oriented individual with 
+        strong communication skills and the ability to work well both independently and in a team. 
+    </p>
+</section>
+
+<section>
+    <h2>My Favourite Songs ♫</h2>
+    <div class="playlist-grid">
+        <iframe style="border-radius:12px"
+        src="https://open.spotify.com/embed/playlist/4K59Rpxa5YAqceJ77cnrIX"
+        width="100%" height="352" frameborder="0" allow="autoplay; encrypted-media">
+        </iframe>
+    </div>
+</section>
+
+<section>
+    <h2>About Me 🎬</h2>
+    <div class="video-container">
+        <div class="video-frame">
+            <video controls autoplay muted loop>
+                <source src="wawacantik.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>My Favourite Movies 🍿✨</h2>
+
+    <div class="playlist-grid">
+        <div class="song-card">
+            <img src="cinderella.jpg">
+            <div class="song-title">Cinderella</div>
+        </div>
+
+        <div class="song-card">
+            <img src="derry.jpg">
+            <div class="song-title">Welcome to Derry</div>
+        </div>
+
+        <div class="song-card">
+            <img src="Magika.jpg">
+            <div class="song-title">Magika</div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2025 Nur Syawallina
+</footer>
+
+</div>
+
+<script>
+document.querySelectorAll('.song-card').forEach(card=>{
+    card.addEventListener('click',()=>{
+        card.classList.add('active');
+        setTimeout(()=>card.classList.remove('active'),300);
+    });
+});
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Education Background – Nur Syawallina</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family:"Cormorant Garamond", serif;
+    color:#f9f3f3;
+    background-color: antiquewhite;
+    overflow-x:hidden;
+}
+
+header{
+    text-align:center;
+    padding:90px 20px;
+    background-image:url('header1.jpg');
+    background-size:cover;
+    background-position:center;
+    border-bottom:3px solid rgb(213, 198, 108);
+}
+
+header h1{
+    font-family:"Playfair Display", serif;
+    color:rgb(255, 252, 239);
+    font-size:52px;
+    text-shadow:0 0 20px rgb(49, 46, 31);
+}
+
+/* ===== MUSIC BUTTON ===== */
+#music-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 25px;
+    font-size:18px;
+    font-weight:bold;
+    border:2px solid gold;
+    border-radius:20px;
+    background:rgba(255,215,0,0.15);
+    color:gold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#music-btn:hover{
+    background:gold;
+    color:black;
+}
+
+section{
+    width:80%;
+    margin:60px auto;
+    padding:45px;
+    background:rgba(10,10,10,0.85);
+    border:3px solid gold;
+    border-radius:16px;
+    box-shadow:0 0 35px rgba(255,215,0,0.35);
+}
+
+h2{
+    font-family:"Playfair Display", serif;
+    font-size:38px;
+    color:gold;
+    margin-bottom:35px;
+    text-align:center;
+    text-shadow:0 0 12px gold;
+}
+
+.timeline{text-align:center;}
+
+/* ===== STEP WITH LOGO ===== */
+.step{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    background:rgba(255,215,0,0.12);
+    border-left:6px solid gold;
+    padding:22px;
+    margin:25px auto;
+    width:75%;
+    border-radius:12px;
+    font-size:24px;
+    box-shadow:0 0 18px rgba(255,215,0,0.35);
+    transition:0.4s;
+}
+
+.step img{
+    width:70px;
+    height:70px;
+    object-fit:contain;
+    background:white;
+    padding:8px;
+    border-radius:50%;
+    border:2px solid gold;
+    box-shadow:0 0 12px gold;
+}
+
+.step:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 35px gold;
+}
+
+.arrow{
+    font-size:34px;
+    color:gold;
+    animation:floatArrow 2s infinite ease-in-out;
+}
+
+@keyframes floatArrow{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(8px);}
+    100%{transform:translateY(0);}
+}
+
+/* ===== TIMETABLE ===== */
+.timetable{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:30px;
+    font-size:20px;
+}
+
+.timetable th,
+.timetable td{
+    border:2px solid gold;
+    padding:15px;
+    text-align:center;
+}
+
+.timetable th{
+    background:rgba(255,215,0,0.25);
+    color:gold;
+    font-family:"Playfair Display", serif;
+}
+
+.timetable td{
+    background:rgba(0,0,0,0.6);
+}
+
+.back{
+    display:inline-block;
+    margin-top:40px;
+    padding:12px 30px;
+    border:2px solid gold;
+    border-radius:30px;
+    color:gold;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.back:hover{
+    background:gold;
+    color:black;
+}
+
+/* ===== GLITTER SPARKLE EFFECT ===== */
+.sparkle{
+    position:fixed;
+    width:6px;
+    height:6px;
+    background:gold;
+    border-radius:50%;
+    pointer-events:none;
+    box-shadow:0 0 12px gold;
+    animation:sparkFade 0.8s linear forwards;
+    z-index:9999;
+}
+
+@keyframes sparkFade{
+    from{transform:scale(1); opacity:1;}
+    to{transform:scale(0); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== BACKGROUND MUSIC ===== -->
+<audio id="bg-music" autoplay loop>
+    <source src="videoplayback.m4a" type="audio/mpeg">
+</audio>
+
+<header>
+    <h1>⚡ Education Background ⚡</h1>
+    <button id="music-btn">🔊 Music On/Off</button>
+</header>
+
+<section>
+    <h2>🪄 My Education Journey ⚯ ͛</h2>
+
+    <div class="timeline">
+
+        <div class="step">
+            <img src="tadika perpaduan.jpg" alt="Tadika Logo">
+            🎒 Kindergarten ➜ Tadika Perpaduan (2010-2011)
+        </div>
+
+        <div class="arrow">⬇</div>
+
+        <div class="step">
+            <img src="rendah.png" alt="Primary School Logo">
+            🏫 Primary School ➜ Sekolah Rendah Malim (2012-2017)
+        </div>
+
+        <div class="arrow">⬇</div>
+
+        <div class="step">
+            <img src="Smk malim.jpg" alt="Secondary School Logo">
+            📘 Secondary School ➜ Sekolah Menengah Malim (2018-2022)
+        </div>
+
+        <div class="arrow">⬇</div>
+
+        <div class="step">
+            <img src="uitmlogo.png" alt="UiTM Logo">
+            🎓 Universiti Teknologi MARA (UiTM)<br>
+            Diploma in Information Management (2023-now)
+        </div>
+
+    </div>
+
+    <h2>🕰 My Daily Timetable</h2>
+
+    <table class="timetable">
+        <tr>
+            <th>Day</th>
+            <th>Morning</th>
+            <th>Afternoon</th>
+            <th>Evening</th>
+        </tr>
+        <tr>
+            <td>Monday</td>
+            <td>Class 📚</td>
+            <td>Study Group ✍️</td>
+            <td>Revision 🎵</td>
+        </tr>
+        <tr>
+            <td>Tuesday</td>
+            <td>Class 📖</td>
+            <td>Movie 🎬</td>
+            <td>Revision</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>Class 📝</td>
+            <td>Group Work 👥</td>
+            <td>Music 🎶</td>
+        </tr>
+        <tr>
+            <td>Thursday</td>
+            <td>Class ✨</td>
+            <td>Revision 🪄</td>
+            <td>Free Time 🌙</td>
+        </tr>
+        <tr>
+            <td>Friday</td>
+            <td>Free Time ☀</td>
+            <td>Assignment 💼</td>
+            <td>Family Time ❤️</td>
+        </tr>
+    </table>
+
+    <div style="text-align:center;">
+        <a href="index.html" class="back">⬅ Back to Home</a>
+    </div>
+</section>
+
+<!-- ===== JS TO CONTROL MUSIC ===== -->
+<script>
+const music = document.getElementById('bg-music');
+const btn = document.getElementById('music-btn');
+
+btn.addEventListener('click', () => {
+    if(music.paused){
+        music.play();
+    } else {
+        music.pause();
+    }
+});
+
+// ⭐ GLITTER SPARKLE EFFECT
+window.addEventListener('mousemove', e => {
+    const spark = document.createElement('div');
+    spark.className = 'sparkle';
+    spark.style.left = e.clientX + 'px';
+    spark.style.top = e.clientY + 'px';
+    document.body.appendChild(spark);
+    setTimeout(() => spark.remove(), 800);
+});
+</script>
+
+</body>
+</html>
+
